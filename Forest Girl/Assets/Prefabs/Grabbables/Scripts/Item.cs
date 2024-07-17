@@ -32,6 +32,7 @@ public class Item : MonoBehaviour, IGrabbable
 
     public void Grab()
     {
+        _onGrab.Invoke();
         _inventoryPerformer.GrabItem(this);
     }
 

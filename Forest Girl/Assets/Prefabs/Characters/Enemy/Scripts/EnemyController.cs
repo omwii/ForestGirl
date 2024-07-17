@@ -88,6 +88,14 @@ namespace Enemy
 
             _fsm.AddState(new FSM_StateListen(_fsm, _listenPerformer, _animationPerformer, this, _viewPerformer, _navMeshAgent));
 
+            _fsm.AddState(new FSM_State(_fsm));
+
+            _fsm.SetState<FSM_State>();
+        }
+
+        //Public Methods
+        public void OnBasementUnlock()
+        {
             _fsm.SetState<FSM_StateIdle>();
         }
     }
