@@ -12,7 +12,7 @@ public class PaperController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical") != 0)
         {
             for (int i = 0; i < _paperImages.Length; i++)
             {

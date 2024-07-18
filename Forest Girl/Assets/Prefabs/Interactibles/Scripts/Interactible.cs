@@ -7,10 +7,11 @@ public class Interactible : MonoBehaviour, IInteractible
 
     public UnityEvent OnInteract { get { return _onInteract; } }
 
-    public bool InteractValue { get; }
+    public bool InteractValue { get; private set; }
 
     public void Interact()
     {
+        InteractValue = true;
         _onInteract.Invoke();
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MultiInteractible : MonoBehaviour
 {
-    [SerializeField] private IInteractible[] _interactibleMembers;
+    [SerializeField] private Interactible[] _interactibleMembers;
     [SerializeField] private UnityEvent _onAllTrue;
 
     private bool[] _interactibleVariables;
