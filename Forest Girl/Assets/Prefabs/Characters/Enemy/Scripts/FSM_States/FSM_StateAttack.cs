@@ -3,6 +3,8 @@ using Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
+using UnityEngine.SceneManagement;
 
 namespace Enemy
 {
@@ -32,7 +34,7 @@ namespace Enemy
             _audioSource = audioSource;
         }
 
-        public override void Enter()
+        public override async void Enter()
         {
             _enemyTransform.DODynamicLookAt(_playerTransform.position, 0.3f, AxisConstraint.Y);
             _animationPerformer.SwitchMoveAnimState(false);
@@ -40,6 +42,13 @@ namespace Enemy
             _playerController.DummyIn(_enemyTransform, _attackPlayerTargetTransform);
             _playerController.Effects();
             _audioSource.Play();
+            await Bruh();
+        }
+
+        private async Task Bruh()
+        {
+            await Task.Delay(2000);
+            SceneManager.LoadScene("FirstCut");
         }
         #endregion
     }

@@ -44,6 +44,7 @@ namespace Player
 
         public void Interact() //Only on pressed interact button
         {
+
             Ray ray = new Ray(_playerCamera.position, _playerCamera.forward);
             if (Physics.Raycast(ray, out RaycastHit hitInfo, _interactDistance))
             {

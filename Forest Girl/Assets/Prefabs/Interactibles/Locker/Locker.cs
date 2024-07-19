@@ -14,14 +14,13 @@ public class Locker : MonoBehaviour, IInteractible
 
     private PlayerController _playerController;
 
-    private void Start()
-    {
-        _playerController = GameObject.FindGameObjectWithTag("Player")
-            .GetComponent<PlayerController>();
-    }
-
     public void Interact()
     {
+        if (_playerController == null)
+        {
+            _playerController = GameObject.FindGameObjectWithTag("Player")
+            .GetComponent<PlayerController>();
+        }
         _onInteract.Invoke();
 
         if (!InteractValue)
